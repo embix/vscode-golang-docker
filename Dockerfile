@@ -5,10 +5,11 @@ LABEL maintainer="michelbretschneider@gmail.com"
 LABEL build="./scripts/build-vscode-golang-docker.sh"
 LABEL run="./scripts/run-vscode-golang-docker.sh"
 
-# Install necessary packages.
+# Install necessary packages. incl. term to debug x11 forwarding
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     curl ca-certificates git libgtk2.0 libgconf-2-4 libnss3 libxtst6 \
-    libcanberra-gtk-module libgl1-mesa-glx libxss1 sudo firefox xdg-utils
+    libcanberra-gtk-module libgl1-mesa-glx libxss1 sudo firefox xdg-utils \
+    xterm
 
 # Create user.
 RUN addgroup --gid 1000 docker && \
