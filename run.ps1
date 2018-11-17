@@ -5,9 +5,10 @@ set-variable -name CONFIG_PATH -value $WORKROOT/.config
 set-variable -name DISPLAY -value 192.168.1.125:0
 
 # remember PS uses grave/accent ` instead of backslash \ for continue-on-next-line
+# VSCODE WILL NOT WORK :_(
 docker run -it --rm --privileged --name vscode-golang-hackyhack `
     -v ${GO_PATH}:/home/docker/go `
     -v ${VSCODE_PATH}:/home/docker/.vscode `
     -v ${CONFIG_PATH}:/home/docker/.config/Code `
     -e DISPLAY=$DISPLAY `
-    vscode-golang-docker:v1
+    vscode-golang-docker:v1 code --verbose .
