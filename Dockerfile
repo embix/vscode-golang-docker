@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 # Author and Docker Image information.
-LABEL maintainer="hrvoje.varga@gmail.com"
+LABEL maintainer="michelbretschneider@gmail.com"
 LABEL build="./scripts/build-vscode-golang-docker.sh"
 LABEL run="./scripts/run-vscode-golang-docker.sh"
 
